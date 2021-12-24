@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#ffdbdb, #ff6969f6);
+  overflow: hidden;
+}
+
+.tree {
+  position: relative;
+  top: -150px;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(30deg);
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+}
+
+.tree div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateY(calc(70px * var(--j)));
+}
+
+.tree div.top-first-floor span {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 75px);
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(86px);
+}
+
+.tree div.top-second-floor span {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 105px);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(121px);
+}
+
+.tree div.top-third-floor span {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 120px);
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(138px);
+}
+
+.tree div.top-fourth-floor span {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 135px);
+  width: 90%;
+  height: 90%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(156px);
+}
+
+.tree div.top-five-floor span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(173px);
+}
+
+.tree div.bottom span {
+  position: absolute;
+  top: 350px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(90deg, #bb4622, #df7214);
+  transform-origin: bottom;
+  border-bottom: 10px solid #00000019;
+  transform: rotateY(calc(90deg * var(--i))) translateZ(30px);
+}
+
+.tree div.star span {
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, #dee943, #ecf75b);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  transform-origin: bottom;
+  transform: rotateY(calc(90deg * var(--i))) translateZ(0rem);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: #0002;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateZ(-500px);
+  filter: blur(20px);
+}
+
+.sub-snow {
+  background: radial-gradient(#ffff, rgb(233, 233, 233));
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+@keyframes snows-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snows-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes snows-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snows-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.sub-snow {
+  position: fixed;
+  top: -20%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  animation-name: snows-fall, snows-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.sub-snow:nth-of-type(0) {
+  left: 1%;
+  animation-delay: 0s, 0s;
+}
+.sub-snow:nth-of-type(1) {
+  left: 10%;
+  animation-delay: 1s, 1s;
+}
+.sub-snow:nth-of-type(2) {
+  left: 20%;
+  animation-delay: 6s, 0.5s;
+}
+.sub-snow:nth-of-type(3) {
+  left: 30%;
+  animation-delay: 4s, 2s;
+}
+.sub-snow:nth-of-type(4) {
+  left: 40%;
+  animation-delay: 2s, 2s;
+}
+.sub-snow:nth-of-type(5) {
+  left: 50%;
+  animation-delay: 8s, 3s;
+}
+.sub-snow:nth-of-type(6) {
+  left: 60%;
+  animation-delay: 6s, 2s;
+}
+.sub-snow:nth-of-type(7) {
+  left: 70%;
+  animation-delay: 2.5s, 1s;
+}
+.sub-snow:nth-of-type(8) {
+  left: 80%;
+  animation-delay: 1s, 0s;
+}
+.sub-snow:nth-of-type(9) {
+  left: 90%;
+  animation-delay: 3s, 1.5s;
+}
+.sub-snow:nth-of-type(10) {
+  left: 5%;
+  animation-delay: 3s, 1s;
+}
+.sub-snow:nth-of-type(11) {
+  left: 15%;
+  animation-delay: 5s, 3s;
+}
+.sub-snow:nth-of-type(12) {
+  left: 25%;
+  animation-delay: 4s, 1.5s;
+}
+.sub-snow:nth-of-type(13) {
+  left: 35%;
+  animation-delay: 8s, 3s;
+}
+.sub-snow:nth-of-type(14) {
+  left: 45%;
+  animation-delay: 1s, 4s;
+}
+.sub-snow:nth-of-type(15) {
+  left: 55%;
+  animation-delay: 3.5s, 1s;
+}
+.sub-snow:nth-of-type(16) {
+  left: 65%;
+  animation-delay: 1s, 3.5s;
+}
+.sub-snow:nth-of-type(17) {
+  left: 75%;
+  animation-delay: 2s, 3s;
+}
+.sub-snow:nth-of-type(18) {
+  left: 85%;
+  animation-delay: 4s, 2.5s;
+}
+.sub-snow:nth-of-type(19) {
+  left: 95%;
+  animation-delay: 4s, 3.5s;
+}
+
+audio {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+}
